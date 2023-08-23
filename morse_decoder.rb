@@ -28,10 +28,10 @@ def transform_morse_code(str)
     '--..' => 'Z'
   }
   result = str.split('   ').map do |word|
-    word = word.split(' ').map do |letter|
-      letter = morseCode[letter]
+    word = word.split.map do |letter|
+      morseCode[letter]
     end
-    word.join('')
+    word.join
   end
   puts result.join(' ')
 end
