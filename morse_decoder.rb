@@ -1,5 +1,5 @@
-def transform_morse_code(str)
-  morseCode = {
+def decoder(str)
+  morse_code = {
     '.-' => 'A',
     '-...' => 'B',
     '-.-.' => 'C',
@@ -29,10 +29,10 @@ def transform_morse_code(str)
   }
   result = str.split('   ').map do |word|
     word = word.split.map do |letter|
-      morseCode[letter]
+      morse_code[letter]
     end
     word.join
   end
   puts result.join(' ')
 end
-transform_morse_code('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
+decoder('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
