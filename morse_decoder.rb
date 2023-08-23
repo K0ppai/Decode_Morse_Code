@@ -1,4 +1,4 @@
-$morse_code = {
+MORSE_CODE = {
   '.-' => 'A',
   '-...' => 'B',
   '-.-.' => 'C',
@@ -27,7 +27,7 @@ $morse_code = {
   '--..' => 'Z'
 }
 def decoder(str)
-  result = decode_words(str, $morse_code)
+  result = decode_words(str, MORSE_CODE)
   puts result.join(' ')
 end
 
