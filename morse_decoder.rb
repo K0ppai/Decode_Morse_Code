@@ -25,7 +25,7 @@ MORSE_CODE = {
   '-..-' => 'X',
   '-.--' => 'Y',
   '--..' => 'Z'
-}
+}.freeze
 def decoder(str)
   result = decode_words(str, MORSE_CODE)
   puts result.join(' ')
