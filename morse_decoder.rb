@@ -27,12 +27,20 @@ def decoder(str)
     '-.--' => 'Y',
     '--..' => 'Z'
   }
-  result = str.split('   ').map do |word|
-    word = word.split.map do |letter|
-      morse_code[letter]
-    end
-    word.join
-  end
+  result = decode_words(str, morse_code)
   puts result.join(' ')
 end
+
+def decode_words(str, morse_code)
+  str.split('   ').map do |word|
+    decode_word(word, morse_code)
+  end
+end
+
+def decode_word(word, morse_code)
+  word.split.map do |letter|
+    morse_code[letter]
+  end.join
+end
+
 decoder('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
